@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h2 class="h2">Airport List</h2>
+
+  {% if airport_list %}
+  <table class="table">
+  <tr>
+    <th>IATA code</th>
+    <th>Airport</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Timezone</th>
+    <th>Latitude, Longitude</th>
+  </tr>
+  {% for airport in airport_list %}
+    <tr>
+      <td><a href="{% url 'management:airport-detail' pk=airport.id %}">{{ airport.iata }}</a></td>
+      <td><a href="{% url 'management:airport-detail' pk=airport.id %}">{{ airport.name }}</a></td>
+      <td><a href="{% url 'management:airport-detail' pk=airport.id %}">{{ airport.city }}</a></td>
+      <td><a href="{% url 'management:airport-detail' pk=airport.id %}">{{ airport.country }}</a></td>
+      <td>{{ airport.timezone }}</td>
+      <td>{{ airport.latitude }}<br>{{ airport.longitude }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% else %}
+    <p>No airports found.</p>
+  {% endif %}
+{% endblock %}

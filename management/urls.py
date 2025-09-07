@@ -18,11 +18,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from management.views import index
+from management.views import (
+    index,
+    FlightListView,
+    StaffListView,
+    PlaneListView,
+    AirportListView
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
+    path("airports/", AirportListView.as_view(), name="airports"),
+    path("planes/", PlaneListView.as_view(), name="planes"),
+    path("staff/", StaffListView.as_view(), name="staff"),
+    path("flights/", FlightListView.as_view(), name="flights"),
 ]
 
 app_name = "management"

@@ -79,16 +79,6 @@ class Staff(AbstractUser):
         Airport,
         related_name="staff"
     )
-    groups = models.ManyToManyField(
-        Group,
-        related_name="staff_members",
-        blank=True
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        related_name="staff_members",
-        blank=True
-    )
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.position})"
