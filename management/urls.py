@@ -23,16 +23,24 @@ from management.views import (
     FlightListView,
     StaffListView,
     PlaneListView,
-    AirportListView
+    AirportListView,
+    AirportDetailView,
+    PlaneDetailView,
+    StaffDetailView,
+    FlightDetailView
 )
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
     path("airports/", AirportListView.as_view(), name="airports"),
+    path("airports/<int:pk>/", AirportDetailView.as_view(), name="airport-detail"),
     path("planes/", PlaneListView.as_view(), name="planes"),
+    path("planes/<int:pk>/", PlaneDetailView.as_view(), name="plane-detail"),
     path("staff/", StaffListView.as_view(), name="staff"),
+    path("staff/<int:pk>/", StaffDetailView.as_view(), name="staff-detail"),
     path("flights/", FlightListView.as_view(), name="flights"),
+    path("flights/<int:pk>/", FlightDetailView.as_view(), name="flight-detail"),
 ]
 
 app_name = "management"

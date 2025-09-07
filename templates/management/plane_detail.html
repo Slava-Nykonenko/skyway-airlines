@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="h2">{{ plane.model }}</h2>
+  <p class="article">
+    Registration: {{ plane.registration }}<br>
+    Capacity: {{ plane.capacity }}<br>
+    Last maintenance: {{ plane.last_maintenance }}<br>
+    Hours to maintenance: {{ plane.hours_to_maintenance }}<br>
+    Total hours: {{ plane.total_hours }}<br>
+  </p>
+
+  <a href="#" class="btn btn-secondary">
+    Update
+  </a>
+  <a href="#" class="btn btn-danger">
+    Delete
+  </a>
+{% endblock %}

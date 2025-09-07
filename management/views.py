@@ -38,9 +38,16 @@ class AirportListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 5
 
 
+class AirportDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Airport
+
+
 class PlaneListView(LoginRequiredMixin, generic.ListView):
     model = Plane
     paginate_by = 5
+
+class PlaneDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Plane
 
 
 class FlightListView(LoginRequiredMixin, generic.ListView):
@@ -48,6 +55,14 @@ class FlightListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 5
 
 
+class FlightDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Flight
+
+
 class StaffListView(LoginRequiredMixin, generic.ListView):
     model = Staff
     paginate_by = 5
+
+
+class StaffDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Staff

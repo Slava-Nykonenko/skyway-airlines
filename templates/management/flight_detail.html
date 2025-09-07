@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="h2">{{ flight.flight_number }}</h2>
+  <p class="article">
+    Plane: {{ flight.plane }}<br>
+    Departure: {{ flight.departure }} {{ flight.takeoff }}<br>
+    Destination: {{ flight.destination }} {{ flight.landing }}<br>
+    Status: {{ flight.status }}</p> {# change text color for different statuses #}
+  <h3>Staff:</h3>
+  <ul class="article-ul">
+  {% for staff in flight.staff.all %}
+    <li>
+    {{ staff }}
+    </li>
+  {% endfor %}
+  </ul>
+  <a href="#" class="btn btn-secondary link-to-page">
+    Update
+  </a>
+  <a href="#" class="btn btn-danger link-to-page">
+    Delete
+  </a>
+
+{% endblock %}
