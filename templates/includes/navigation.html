@@ -1,0 +1,37 @@
+{% load static %}
+<nav class="navbar" data-navbar>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Airports</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Planes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Staff</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Flights</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-bar-item">
+              <a href="#" class="navbar-link" data-nav-link>{{ user.get_username }}</a></li>
+            <li class="nav-bar-item">
+              <a href="#" class="navbar-link" data-nav-link>Logout</a>
+            </li>
+          {% else %}
+            <li class="nav-bar-item">
+              <a href="#" class="navbar-link" data-nav-link>Login</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
