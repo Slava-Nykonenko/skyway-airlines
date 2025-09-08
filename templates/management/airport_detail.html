@@ -7,14 +7,28 @@
     Country: {{ airport.country }}<br>
     Timezone: {{ airport.timezone }}<br>
     Latitude: {{ airport.latitude }}<br>
-    Longitude: {{ airport.longitude }}
+    Longitude: {{ airport.longitude }}<br>
   </p>
-
+  {% if airport in user.allowed_airports.all %}
+    <p class="paragraph">
+      You are currently allowed to use this airport. Do you want to remove it from your allowed list?
+      <a href="{% url 'management:toggle-assign-to-airport' pk=airport.id %}" class="btn btn-secondary">
+        Remove from allowed airports
+      </a>
+    </p>
+  {% else %}
+    <p class="paragraph">
+      You are not allowed to use this airport yet. Do you want to add it to your allowed list?
+      <a href="{% url 'management:toggle-assign-to-airport' pk=airport.id %}" class="btn btn-secondary">
+        Add to allowed airports
+      </a>
+    </p>
+  {% endif %}
   <a href="{% url 'management:airport-update' pk=airport.id %}" class="btn btn-secondary">
-    Update
+    Update airport
   </a>
 
   <a href="{% url 'management:airport-delete' pk=airport.id %}" class="btn btn-secondary btn-danger">
-    Delete
+    Delete airport
   </a>
 {% endblock %}

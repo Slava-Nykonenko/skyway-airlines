@@ -521,6 +521,12 @@ tbody tr:hover {
   background-color: rgba(17, 77, 54, 0.4);
 }
 
+.paragraph {
+  font-size: 24px;
+  text-align: left;
+  padding-bottom: 25px;
+}
+
 .article {
   font-size: 24px;
   text-align: left;

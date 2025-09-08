@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -228,3 +229,29 @@ class StaffUpdateView(LoginRequiredMixin, generic.UpdateView):
 class StaffDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Staff
     success_url = reverse_lazy("management:staff")
+
+
+@login_required
+def toggle_assign_to_plane(request, pk):
+    staff_member = Staff.objects.get(id=request.user.id)
+    plane = Plane.objects.get(id=pk)
+    if (
+        plane in staff_member.allowed_planes.all()
+    ):
+        staff_member.allowed_planes.remove(plane)
+    else:
+        staff_member.allowed_planes.add(plane)
+    return HttpResponseRedirect(reverse_lazy("management:plane-detail", args=[pk]))
+
+
+@login_required
+def toggle_assign_to_airport(request, pk):
+    staff_member = Staff.objects.get(id=request.user.id)
+    airport = Airport.objects.get(id=pk)
+    if (
+        airport in staff_member.allowed_airports.all()
+    ):
+        staff_member.allowed_airports.remove(airport)
+    else:
+        staff_member.allowed_airports.add(airport)
+    return HttpResponseRedirect(reverse_lazy("management:airport-detail", args=[pk]))

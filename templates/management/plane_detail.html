@@ -7,13 +7,29 @@
     Capacity: {{ plane.capacity }}<br>
     Last maintenance: {{ plane.last_maintenance }}<br>
     Hours to maintenance: {{ plane.hours_to_maintenance }}<br>
-    Total hours: {{ plane.total_hours }}<br>
+    Total hours: {{ plane.total_hours }}
   </p>
 
+  {% if plane in user.allowed_planes.all %}
+    <p class="paragraph">
+      You are currently allowed to use this plane. Do you want to remove it from your allowed list?
+      <a href="{% url 'management:toggle-assign-to-plane' pk=plane.id %}" class="btn btn-secondary">
+        Remove from allowed planes
+      </a>
+    </p>
+  {% else %}
+    <p class="paragraph">
+      You are not allowed to use this plane yet. Do you want to add it to your allowed list?
+      <a href="{% url 'management:toggle-assign-to-plane' pk=plane.id %}" class="btn btn-secondary">
+        Add to allowed planes
+      </a>
+    </p>
+  {% endif %}
+
   <a href="{% url 'management:plane-update' pk=plane.id %}" class="btn btn-secondary">
-    Update
+    Update plane
   </a>
   <a href="{% url 'management:plane-delete' pk=plane.id %}" class="btn btn-danger">
-    Delete
+    Delete plane
   </a>
 {% endblock %}
