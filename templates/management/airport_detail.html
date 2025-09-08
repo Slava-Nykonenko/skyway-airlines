@@ -10,11 +10,11 @@
     Longitude: {{ airport.longitude }}
   </p>
 
-  <a href="#" class="btn btn-secondary">
+  <a href="{% url 'management:airport-update' pk=airport.id %}" class="btn btn-secondary">
     Update
   </a>
 
-  <a href="#" class="btn btn-secondary btn-danger">
+  <a href="{% url 'management:airport-delete' pk=airport.id %}" class="btn btn-secondary btn-danger">
     Delete
   </a>
 {% endblock %}

@@ -10,10 +10,10 @@
     Total hours: {{ plane.total_hours }}<br>
   </p>
 
-  <a href="#" class="btn btn-secondary">
+  <a href="{% url 'management:plane-update' pk=plane.id %}" class="btn btn-secondary">
     Update
   </a>
-  <a href="#" class="btn btn-danger">
+  <a href="{% url 'management:plane-delete' pk=plane.id %}" class="btn btn-danger">
     Delete
   </a>
 {% endblock %}

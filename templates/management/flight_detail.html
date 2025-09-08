@@ -15,10 +15,10 @@
     </li>
   {% endfor %}
   </ul>
-  <a href="#" class="btn btn-secondary link-to-page">
+  <a href="{% url 'management:flight-update' pk=flight.id %}" class="btn btn-secondary link-to-page">
     Update
   </a>
-  <a href="#" class="btn btn-danger link-to-page">
+  <a href="{% url 'management:flight-delete' pk=flight.id %}" class="btn btn-danger link-to-page">
     Delete
   </a>
 

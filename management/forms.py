@@ -1,8 +1,13 @@
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
-from management.models import Airport, Staff, Plane, Flight
+from management.models import (
+    Airport,
+    Staff,
+    Plane,
+    Flight
+)
 
 
 class AirportForm(forms.ModelForm):
@@ -11,7 +16,7 @@ class AirportForm(forms.ModelForm):
         fields = '__all__'
 
 
-class StaffForm(UserCreationForm):
+class StaffForm(forms.ModelForm):
     allowed_airports = forms.ModelMultipleChoiceField(
         queryset=Airport.objects.all(),
         widget=forms.CheckboxSelectMultiple,
@@ -28,8 +33,6 @@ class StaffForm(UserCreationForm):
             "last_name",
             "username",
             "email",
-            "password1",
-            "password2",
             "phone_number",
             "licence_number",
             "position",
@@ -37,6 +40,17 @@ class StaffForm(UserCreationForm):
             "allowed_planes",
             "allowed_airports"
         ]
+
+class StaffCreateForm(UserCreationForm, StaffForm):
+    class Meta(StaffForm.Meta):
+        fields = StaffForm.Meta.fields + ["password1", "password2"]
+
+
+class StaffUpdateForm(UserChangeForm, StaffForm):
+    password = None
+
+    class Meta(StaffForm.Meta):
+        fields = StaffForm.Meta.fields
 
 
 class PlaneForm(forms.ModelForm):

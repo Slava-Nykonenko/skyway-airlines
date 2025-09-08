@@ -54,6 +54,17 @@ class AirportCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("management:airports")
 
 
+class AirportUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Airport
+    form_class = AirportForm
+    success_url = reverse_lazy("management:airports")
+
+
+class AirportDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Airport
+    success_url = reverse_lazy("management:airports")
+
+
 class PlaneListView(LoginRequiredMixin, generic.ListView):
     model = Plane
     paginate_by = 5
@@ -66,6 +77,17 @@ class PlaneDetailView(LoginRequiredMixin, generic.DetailView):
 class PlaneCreateView(LoginRequiredMixin, generic.CreateView):
     model = Plane
     form_class = PlaneForm
+    success_url = reverse_lazy("management:planes")
+
+
+class PlaneUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Plane
+    form_class = PlaneForm
+    success_url = reverse_lazy("management:planes")
+
+
+class PlaneDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Plane
     success_url = reverse_lazy("management:planes")
 
 
@@ -84,6 +106,17 @@ class FlightCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("management:flights")
 
 
+class FlightUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Flight
+    form_class = FlightForm
+    success_url = reverse_lazy("management:flights")
+
+
+class FlightDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Flight
+    success_url = reverse_lazy("management:flights")
+
+
 class StaffListView(LoginRequiredMixin, generic.ListView):
     model = Staff
     paginate_by = 5
@@ -98,3 +131,13 @@ class StaffCreateView(LoginRequiredMixin, generic.CreateView):
     form_class = StaffForm
     success_url = reverse_lazy("management:staff")
 
+
+class StaffUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Staff
+    form_class = StaffForm
+    success_url = reverse_lazy("management:staff")
+
+
+class StaffDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Staff
+    success_url = reverse_lazy("management:staff")

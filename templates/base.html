@@ -43,6 +43,9 @@
       <section class="section hero" id="home" aria-label="home">
         <div class="container">
           {% block content %}{% endblock %}
+          {% block pagination %}
+            {% include "includes/pagination.html" %}
+          {% endblock %}
         </div>
       </section>
     </article>
@@ -75,23 +78,23 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Home</a>
+            <a href="{% url 'management:index' %}" class="footer-link">Home</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Planes</a>
+            <a href="{% url 'management:planes' %}" class="footer-link">Planes</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Airports</a>
+            <a href="{% url 'management:airports' %}" class="footer-link">Airports</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Staff</a>
+            <a href="{% url 'management:staff' %}" class="footer-link">Staff</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Flights</a>
+            <a href="{% url 'management:flights' %}" class="footer-link">Flights</a>
           </li>
 
         </ul>
