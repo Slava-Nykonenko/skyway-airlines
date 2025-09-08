@@ -8,7 +8,12 @@ from management.forms import (
     AirportForm,
     PlaneForm,
     FlightForm,
-    StaffForm)
+    StaffForm,
+    AirportSearchForm,
+    PlaneSearchForm,
+    FlightSearchForm,
+    StaffSearchForm
+)
 from management.models import (
     Airport,
     Plane,
@@ -43,6 +48,25 @@ class AirportListView(LoginRequiredMixin, generic.ListView):
     model = Airport
     paginate_by = 5
 
+    def get_context_data(
+        self, *, object_list=None, **kwargs
+    ):
+        context = super(AirportListView, self).get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        context["search_form"] = AirportSearchForm(
+            initial={"name": name}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Airport.objects.all()
+        form = AirportSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
+
 
 class AirportDetailView(LoginRequiredMixin, generic.DetailView):
     model = Airport
@@ -68,6 +92,25 @@ class AirportDeleteView(LoginRequiredMixin, generic.DeleteView):
 class PlaneListView(LoginRequiredMixin, generic.ListView):
     model = Plane
     paginate_by = 5
+
+    def get_context_data(
+        self, *, object_list=None, **kwargs
+    ):
+        context = super(PlaneListView, self).get_context_data(**kwargs)
+        model = self.request.GET.get("model", "")
+        context["search_form"] = PlaneSearchForm(
+            initial={"model": model}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Plane.objects.all()
+        form = PlaneSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                model__icontains=form.cleaned_data["model"]
+            )
+        return queryset
 
 
 class PlaneDetailView(LoginRequiredMixin, generic.DetailView):
@@ -95,6 +138,31 @@ class FlightListView(LoginRequiredMixin, generic.ListView):
     model = Flight
     paginate_by = 5
 
+    def get_context_data(
+        self, *, object_list=None, **kwargs
+    ):
+        context = super(FlightListView, self).get_context_data(**kwargs)
+        flight_number = self.request.GET.get("flight_number", "")
+        context["search_form"] = FlightSearchForm(
+            initial={"flight_number": flight_number}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Flight.objects.all().select_related(
+            "departure",
+            "destination",
+            "plane"
+        )
+        form = FlightSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                flight_number__icontains=form.cleaned_data[
+                    "flight_number"
+                ]
+            )
+        return queryset
+
 
 class FlightDetailView(LoginRequiredMixin, generic.DetailView):
     model = Flight
@@ -120,6 +188,25 @@ class FlightDeleteView(LoginRequiredMixin, generic.DeleteView):
 class StaffListView(LoginRequiredMixin, generic.ListView):
     model = Staff
     paginate_by = 5
+
+    def get_context_data(
+        self, *, object_list=None, **kwargs
+    ):
+        context = super(StaffListView, self).get_context_data(**kwargs)
+        last_name = self.request.GET.get("last_name", "")
+        context["search_form"] = StaffSearchForm(
+            initial={"last_name": last_name}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Staff.objects.all()
+        form = StaffSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                last_name__icontains=form.cleaned_data["last_name"]
+            )
+        return queryset
 
 
 class StaffDetailView(LoginRequiredMixin, generic.DetailView):

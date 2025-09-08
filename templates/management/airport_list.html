@@ -2,12 +2,11 @@
 
 {% block content %}
 
-  <h2 class="h2">Airport List</h2>
-
-  <a href="{% url 'management:airport-create' %}" class="btn btn-primary">
+  <h2 class="header-2">Airport List</h2>
+  <a href="{% url 'management:airport-create' %}" class="btn btn-primary btn-add">
     Add an airport
   </a>
-
+  {% include "includes/search_form.html" %}
   {% if airport_list %}
   <table class="table">
   <tr>

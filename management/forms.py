@@ -132,3 +132,47 @@ class FlightForm(forms.ModelForm):
         validate_flight(cleaned_data)
         return cleaned_data
 
+
+
+class AirportSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by airport name"}
+        ),
+        required=False,
+        label="",
+    )
+
+
+class PlaneSearchForm(forms.Form):
+    model = forms.CharField(
+        max_length=255,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by plane model"}
+        ),
+        required=False,
+        label="",
+    )
+
+
+class FlightSearchForm(forms.Form):
+    flight_number = forms.CharField(
+        max_length=10,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by flight number"}
+        ),
+        required=False,
+        label="",
+    )
+
+
+class StaffSearchForm(forms.Form):
+    last_name = forms.CharField(
+        max_length=255,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by last name"}
+        ),
+        required=False,
+        label="",
+    )

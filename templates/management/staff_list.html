@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2 class="h2">
+  <h2 class="header-2">
     Staff List
   </h2>
-  <a href="{% url 'management:staff-create' %}" class="btn btn-primary">
+  <a href="{% url 'management:staff-create' %}" class="btn btn-primary btn-add">
     Add a staff member
   </a>
+  {% include "includes/search_form.html" %}
   {% if staff_list %}
   <table class="table">
   <tr>
