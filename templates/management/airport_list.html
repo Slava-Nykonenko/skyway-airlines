@@ -4,6 +4,10 @@
 
   <h2 class="h2">Airport List</h2>
 
+  <a href="{% url 'management:airport-create' %}" class="btn btn-primary">
+    Add an airport
+  </a>
+
   {% if airport_list %}
   <table class="table">
   <tr>

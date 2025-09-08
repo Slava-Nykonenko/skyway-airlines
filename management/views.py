@@ -1,13 +1,19 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
+from management.forms import (
+    AirportForm,
+    PlaneForm,
+    FlightForm,
+    StaffForm)
 from management.models import (
     Airport,
     Plane,
-    Staff,
-    Flight
+    Flight,
+    Staff
 )
 
 
@@ -42,12 +48,25 @@ class AirportDetailView(LoginRequiredMixin, generic.DetailView):
     model = Airport
 
 
+class AirportCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Airport
+    form_class = AirportForm
+    success_url = reverse_lazy("management:airports")
+
+
 class PlaneListView(LoginRequiredMixin, generic.ListView):
     model = Plane
     paginate_by = 5
 
+
 class PlaneDetailView(LoginRequiredMixin, generic.DetailView):
     model = Plane
+
+
+class PlaneCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Plane
+    form_class = PlaneForm
+    success_url = reverse_lazy("management:planes")
 
 
 class FlightListView(LoginRequiredMixin, generic.ListView):
@@ -59,6 +78,12 @@ class FlightDetailView(LoginRequiredMixin, generic.DetailView):
     model = Flight
 
 
+class FlightCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Flight
+    form_class = FlightForm
+    success_url = reverse_lazy("management:flights")
+
+
 class StaffListView(LoginRequiredMixin, generic.ListView):
     model = Staff
     paginate_by = 5
@@ -66,3 +91,10 @@ class StaffListView(LoginRequiredMixin, generic.ListView):
 
 class StaffDetailView(LoginRequiredMixin, generic.DetailView):
     model = Staff
+
+
+class StaffCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Staff
+    form_class = StaffForm
+    success_url = reverse_lazy("management:staff")
+

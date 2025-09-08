@@ -4,6 +4,9 @@
   <h2 class="h2">
     Plane List
   </h2>
+  <a href="{% url 'management:plane-create' %}" class="btn btn-primary">
+    Add a plane
+  </a>
   {% if plane_list %}
   <table class="table">
   <tr>

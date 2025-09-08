@@ -4,6 +4,9 @@
   <h2 class="h2">
     Staff List
   </h2>
+  <a href="{% url 'management:staff-create' %}" class="btn btn-primary">
+    Add a staff member
+  </a>
   {% if staff_list %}
   <table class="table">
   <tr>

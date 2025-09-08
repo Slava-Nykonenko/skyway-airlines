@@ -4,7 +4,9 @@
   <h2 class="h2">
     Flight List
   </h2>
-
+  <a href="{% url 'management:flight-create' %}" class="btn btn-primary">
+    Add a flight
+  </a>
   {% if flight_list %}
   <table class="table">
   <tr>

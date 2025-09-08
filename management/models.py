@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 
@@ -82,6 +84,12 @@ class Staff(AbstractUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.position})"
+
+    def get_absolute_url(self):
+        return reverse(
+            "management:staff-detail",
+            kwargs={"pk": self.pk}
+        )
 
 
 class Flight(models.Model):
