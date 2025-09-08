@@ -37,8 +37,11 @@ from management.views import (
     AirportDeleteView,
     PlaneDeleteView,
     StaffDeleteView,
-    FlightDeleteView, toggle_assign_to_plane, toggle_assign_to_airport
+    FlightDeleteView,
+    toggle_assign_to_plane,
+    toggle_assign_to_airport
 )
+
 
 urlpatterns = [
     path("", index, name="index"),
@@ -65,5 +68,4 @@ urlpatterns = [
     path("planes/<int:pk>/toggle/", toggle_assign_to_plane, name="toggle-assign-to-plane"),
     path("airports/<int:pk>/toggle/", toggle_assign_to_airport, name="toggle-assign-to-airport")
 ]
-
 app_name = "management"
