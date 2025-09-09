@@ -4,7 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import (
+    render,
+    redirect,
+    get_object_or_404
+)
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -16,7 +20,10 @@ from management.forms import (
     AirportSearchForm,
     PlaneSearchForm,
     FlightSearchForm,
-    StaffSearchForm, StaffCreateForm, StaffUpdateForm, StaffChangePasswordForm
+    StaffSearchForm,
+    StaffCreateForm,
+    StaffUpdateForm,
+    StaffChangePasswordForm
 )
 from management.models import (
     Airport,
