@@ -63,7 +63,7 @@ class Staff(AbstractUser):
         blank=True
     )
     licence_number = models.CharField(
-        max_length=10,
+        max_length=8,
         unique=True,
         null=True,
         blank=True

@@ -6,7 +6,7 @@
   --phthalo-green-1: hsl(143, 54%, 9%);
   --phthalo-green-2: hsl(191, 51%, 20%);
   --morning-blue: hsl(0, 0%, 100%);
-  --medium-light-blue: hsl(212, 44%, 61%);
+  --medium-light-blue: hsl(212, 90%, 61%);
   --vegas-gold: hsl(48, 40%, 51%);
   --baby-powder: hsl(51, 33%, 96%);
   --white-10: hsla(0, 0%, 100%, 0.1);
@@ -150,6 +150,7 @@ body.active { overflow: hidden; }
 .btn-secondary:is(:hover, :focus) {
   background-color: var(--medium-light-blue);
   color: var(--white);
+  margin: 15px 0;
 }
 
 .btn-primary:is(:hover, :focus) {
@@ -273,6 +274,8 @@ body.active { overflow: hidden; }
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
+  color: var(--phthalo-green-1);
+  font-weight: bold;
   background-color: var(--white);
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -310,7 +313,7 @@ body.active { overflow: hidden; }
    FORM GROUPS
 \*-----------------------------------*/
 .form-wrapper .form-group {
-  margin-bottom: 12px; /* reduced space */
+  margin-bottom: 12px;
 }
 
 .form-wrapper .form-group:last-child {
@@ -337,12 +340,10 @@ body.active { overflow: hidden; }
   background-color: #fff;
 }
 
-/* tighten spacing specifically between password & confirmation */
 .form-wrapper input[type="password"] {
   margin-bottom: 5px;
 }
 
-/* Multiple select styling */
 .form-wrapper select[multiple] {
   width: 100%;
   min-height: 120px;
@@ -354,6 +355,18 @@ body.active { overflow: hidden; }
   resize: vertical;
   overflow-y: auto;
 }
+
+fieldset {
+  border: none;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  margin-top: 25px;
+}
+ .fs-6 {
+   display: inline-flex;
+ }
+
 
 /*-----------------------------------*\
    FOCUS STATES
@@ -389,7 +402,6 @@ body.active { overflow: hidden; }
   cursor: pointer;
 }
 
-/* fallback for CheckboxSelectMultiple when rendered as <ul><li> */
 .form-wrapper ul {
   list-style: none;
   padding: 0;

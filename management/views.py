@@ -1,7 +1,10 @@
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -13,7 +16,7 @@ from management.forms import (
     AirportSearchForm,
     PlaneSearchForm,
     FlightSearchForm,
-    StaffSearchForm
+    StaffSearchForm, StaffCreateForm, StaffUpdateForm, StaffChangePasswordForm
 )
 from management.models import (
     Airport,
@@ -216,13 +219,13 @@ class StaffDetailView(LoginRequiredMixin, generic.DetailView):
 
 class StaffCreateView(LoginRequiredMixin, generic.CreateView):
     model = Staff
-    form_class = StaffForm
+    form_class = StaffCreateForm
     success_url = reverse_lazy("management:staff")
 
 
 class StaffUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Staff
-    form_class = StaffForm
+    form_class = StaffUpdateForm
     success_url = reverse_lazy("management:staff")
 
 
@@ -255,3 +258,20 @@ def toggle_assign_to_airport(request, pk):
     else:
         staff_member.allowed_airports.add(airport)
     return HttpResponseRedirect(reverse_lazy("management:airport-detail", args=[pk]))
+
+
+@login_required
+def change_password(request, pk):
+    user = get_object_or_404(Staff, pk=pk)
+
+    if request.method == "POST":
+        form = PasswordChangeForm(user=user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, user)  # Keeps user logged in
+            messages.success(request, "Password updated successfully.")
+            return redirect("management:staff-detail", pk=pk)
+    else:
+        form = PasswordChangeForm(user=user)
+
+    return render(request, "management/change_password.html", {"form": form, "staff": user})

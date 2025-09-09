@@ -22,7 +22,7 @@ def validate_licence_number(
 ):
     if len(licence_number) != 8:
         raise ValidationError("Licence number should consist of 8 characters")
-    elif not licence_number[:3].isupper() or not licence_number[:3].isalpha():
+    elif not all(char.isupper() and char.isalpha() for char in licence_number[:3]):
         raise ValidationError("First 3 characters should be uppercase letters")
     elif not licence_number[3:].isdigit():
         raise ValidationError("Last 5 characters should be digits")
@@ -62,14 +62,18 @@ class StaffForm(forms.ModelForm):
 
 class StaffCreateForm(UserCreationForm, StaffForm):
     class Meta(StaffForm.Meta):
+        model = Staff
         fields = StaffForm.Meta.fields + ["password1", "password2"]
 
 
-class StaffUpdateForm(UserChangeForm, StaffForm):
-    password = None
-
+class StaffUpdateForm(StaffForm):
     class Meta(StaffForm.Meta):
+        model = Staff
         fields = StaffForm.Meta.fields
+
+
+class StaffChangePasswordForm(UserChangeForm):
+    model = Staff
 
 
 class PlaneForm(forms.ModelForm):
