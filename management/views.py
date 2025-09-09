@@ -244,7 +244,9 @@ def toggle_assign_to_plane(request, pk):
         staff_member.allowed_planes.remove(plane)
     else:
         staff_member.allowed_planes.add(plane)
-    return HttpResponseRedirect(reverse_lazy("management:plane-detail", args=[pk]))
+    return HttpResponseRedirect(
+        reverse_lazy("management:plane-detail", args=[pk])
+    )
 
 
 @login_required
@@ -257,7 +259,9 @@ def toggle_assign_to_airport(request, pk):
         staff_member.allowed_airports.remove(airport)
     else:
         staff_member.allowed_airports.add(airport)
-    return HttpResponseRedirect(reverse_lazy("management:airport-detail", args=[pk]))
+    return HttpResponseRedirect(
+        reverse_lazy("management:airport-detail", args=[pk])
+    )
 
 
 @login_required
@@ -274,4 +278,11 @@ def change_password(request, pk):
     else:
         form = PasswordChangeForm(user=user)
 
-    return render(request, "management/change_password.html", {"form": form, "staff": user})
+    return render(
+        request,
+        "management/change_password.html",
+        {
+            "form": form,
+            "staff": user
+        }
+    )

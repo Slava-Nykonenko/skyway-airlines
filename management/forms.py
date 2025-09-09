@@ -1,6 +1,9 @@
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import (
+    UserCreationForm,
+    UserChangeForm
+)
 from django.core.exceptions import ValidationError
 
 from management.models import (
@@ -14,18 +17,27 @@ from management.models import (
 class AirportForm(forms.ModelForm):
     class Meta:
         model = Airport
-        fields = '__all__'
+        fields = "__all__"
 
 
 def validate_licence_number(
         licence_number,
 ):
     if len(licence_number) != 8:
-        raise ValidationError("Licence number should consist of 8 characters")
-    elif not all(char.isupper() and char.isalpha() for char in licence_number[:3]):
-        raise ValidationError("First 3 characters should be uppercase letters")
+        raise ValidationError(
+            "Licence number should consist of 8 characters"
+        )
+    elif not all(
+            char.isupper() and char.isalpha()
+            for char in licence_number[:3]
+    ):
+        raise ValidationError(
+            "First 3 characters should be uppercase letters"
+        )
     elif not licence_number[3:].isdigit():
-        raise ValidationError("Last 5 characters should be digits")
+        raise ValidationError(
+            "Last 5 characters should be digits"
+        )
 
     return licence_number
 
@@ -79,10 +91,10 @@ class StaffChangePasswordForm(UserChangeForm):
 class PlaneForm(forms.ModelForm):
     class Meta:
         model = Plane
-        fields = '__all__'
+        fields = "__all__"
         widgets = {
             "last_maintenance": AdminDateWidget(
-                    attrs={"type": "date"},
+                attrs={"type": "date"},
             )
         }
 
@@ -90,15 +102,23 @@ class PlaneForm(forms.ModelForm):
 def validate_flight(data: dict):
     for staff_member in data.get("staff"):
         if not data.get("plane") in staff_member.allowed_planes.all():
-            raise ValidationError(f"{staff_member} cannot fly on {data.get('plane')}")
+            raise ValidationError(
+                f"{staff_member} cannot fly on {data.get("plane")}"
+            )
         if not data.get("departure") in staff_member.allowed_airports.all():
-            raise ValidationError(f"{staff_member} cannot fly from {data.get('departure')}")
+            raise ValidationError(
+                f"{staff_member} cannot fly from {data.get("departure")}"
+            )
         if not data.get("destination") in staff_member.allowed_airports.all():
-            raise ValidationError(f"{staff_member} cannot fly to {data.get('destination')}")
+            raise ValidationError(
+                f"{staff_member} cannot fly to {data.get("destination")}"
+            )
     takeoff = data.get("takeoff")
     landing = data.get("landing")
     if takeoff and landing and landing <= takeoff:
-        raise ValidationError("Landing must be after takeoff.")
+        raise ValidationError(
+            "Landing must be after takeoff."
+        )
     return data
 
 
@@ -135,7 +155,6 @@ class FlightForm(forms.ModelForm):
         cleaned_data = super().clean()
         validate_flight(cleaned_data)
         return cleaned_data
-
 
 
 class AirportSearchForm(forms.Form):

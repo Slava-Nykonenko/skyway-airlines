@@ -1,7 +1,6 @@
 from datetime import date
 
 from django.contrib.auth import get_user_model
-from django.contrib.auth.hashers import check_password
 from django.test import (
     TestCase,
     Client
@@ -57,6 +56,7 @@ class ViewsUnauthorizedTest(TestCase):
         url = reverse("management:flight-create")
         res = self.client.get(url)
         self.assertNotEqual(res.status_code, 200)
+
 
 class ViewsAuthorizedTest(TestCase):
     def setUp(self):
