@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="header-1">Skyway Airlines</h1>
+    <h2 class="header-2">Welcome to Skyway Airlines!</h2>
+    <p class="article">
+      <strong>The airline has the following record counts:</strong><br>
+      <strong>Airports:</strong> {{ num_airports }}<br>
+      <strong>Planes:</strong> {{ num_planes }}<br>
+      <strong>Staff:</strong> {{ num_staff }}<br>
+      <strong>Flights:</strong> {{ num_flights }}<br>
+      You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% load static %}
+<nav class="navbar" data-navbar>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="{% url 'management:index' %}" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="{% url 'management:airports' %}" class="navbar-link" data-nav-link>Airports</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="{% url 'management:planes' %}" class="navbar-link" data-nav-link>Planes</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="{% url 'management:staff' %}" class="navbar-link" data-nav-link>Staff</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="{% url 'management:flights' %}" class="navbar-link" data-nav-link>Flights</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-bar-item">
+              <a href="{{ user.get_absolute_url }}" class="navbar-link" data-nav-link>{{ user.get_username }}</a></li>
+            <li class="nav-bar-item">
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="navbar-link">Logout</button>
+              </form>
+            </li>
+          {% else %}
+            <li class="nav-bar-item">
+              <a href="{% url 'login' %}?next={{request.path}} " class="navbar-link" data-nav-link>Login</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>

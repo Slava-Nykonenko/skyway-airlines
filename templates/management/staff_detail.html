@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="header-2">{{ staff.first_name }} {{ staff.last_name }}</h2>
+  <p class="article">
+    Position: {{ staff.position }}<br>
+    Licence number: {{ staff.licence_number }}<br>
+    Phone number: {{ staff.phone_number }}<br>
+    Total hours: {{ staff.total_hours }}</p>
+  <hr>
+  <h3>Allowed planes:</h3>
+  <ul class="article-ul">
+  {% for plane in staff.allowed_planes.all %}
+    <li>
+    {{ plane }}
+    </li>
+  {% endfor %}
+  </ul>
+  <hr>
+  <h3>
+    Allowed airports:
+  </h3>
+  <ul class="article-ul">
+    {% for airport in staff.allowed_airports.all %}
+      <li>
+        {{ airport }}
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'management:staff-update' pk=staff.id %}" class="btn btn-secondary link-to-page">
+    Update
+  </a>
+  <a href="{% url 'management:staff-delete' pk=staff.id %}" class="btn btn-danger link-to-page">
+    Delete
+  </a>
+
+{% endblock %}

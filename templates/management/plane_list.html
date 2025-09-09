@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="header-2">
+    Plane List
+  </h2>
+  <a href="{% url 'management:plane-create' %}" class="btn btn-primary btn-add">
+    Add a plane
+  </a>
+  {% include "includes/search_form.html" %}
+  {% if plane_list %}
+  <table class="table">
+  <tr>
+    <th>Model</th>
+    <th>Registration</th>
+    <th>Capacity</th>
+    <th>Last maintenance</th>
+    <th>Hours to maintenance</th>
+    <th>Total hours</th>
+  </tr>
+  {% for plane in plane_list %}
+    <tr>
+      <td><a href="{% url 'management:plane-detail' pk=plane.id %}">{{ plane.model }}</a></td>
+      <td>{{ plane.registration }}</td>
+      <td>{{ plane.capacity }}</td>
+      <td>{{ plane.last_maintenance }}</td>
+      <td>{{ plane.hours_to_maintenance }}</td>
+      <td>{{ plane.total_hours }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% else %}
+    <p>No planes found.</p>
+  {% endif %}
+{% endblock %}

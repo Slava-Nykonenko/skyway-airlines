@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h2 class="header-2">{{ object|yesno:"Update,Create" }} a staff member</h2>
+  <form class="form-wrapper" action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if object %}
+      <a class="btn btn-primary" href="{% url 'management:password' object.pk %}">Change password</a>
+    {% endif %}
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+{% endblock %}

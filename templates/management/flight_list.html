@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="header-2">
+    Flight List
+  </h2>
+  <a href="{% url 'management:flight-create' %}" class="btn btn-primary btn-add">
+    Add a flight
+  </a>
+  {% include "includes/search_form.html" %}
+  {% if flight_list %}
+  <table class="table">
+  <tr>
+    <th>Flight Number</th>
+    <th>Plane</th>
+    <th>Departure</th>
+    <th>Takeoff</th>
+    <th>Destination</th>
+    <th>Landing</th>
+    <th>Status</th>
+  </tr>
+  {% for flight in flight_list %}
+    <tr>
+      <td><a href="{% url 'management:flight-detail' pk=flight.id %}">{{ flight.flight_number }}</a></td>
+      <td>{{ flight.plane }}</td>
+      <td>{{ flight.departure }}</td>
+      <td>{{ flight.takeoff }}</td>
+      <td>{{ flight.destination }}</td>
+      <td>{{ flight.landing }}</td>
+      <td>{{ flight.status }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% else %}
+    <p>No flights found.</p>
+  {% endif %}
+{% endblock %}
