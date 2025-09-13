@@ -7,8 +7,7 @@
     Licence number: {{ staff.licence_number }}<br>
     Phone number: {{ staff.phone_number }}<br>
     Total hours: {{ staff.total_hours }}</p>
-  <hr>
-  <h3>Allowed planes:</h3>
+  <h3 class="header-3">Allowed planes:</h3>
   <ul class="article-ul">
   {% for plane in staff.allowed_planes.all %}
     <li>
@@ -16,8 +15,7 @@
     </li>
   {% endfor %}
   </ul>
-  <hr>
-  <h3>
+  <h3 class="header-3">
     Allowed airports:
   </h3>
   <ul class="article-ul">
