@@ -26,7 +26,7 @@
             <li class="nav-bar-item">
               <a href="{{ user.get_absolute_url }}" class="navbar-link" data-nav-link>{{ user.get_username }}</a></li>
             <li class="nav-bar-item">
-              <form method="post" action="{% url 'logout' %}">
+              <form method="post" action="{% url 'logout' %}?next={{request.path}} ">
                 {% csrf_token %}
                 <button type="submit" class="navbar-link">Logout</button>
               </form>

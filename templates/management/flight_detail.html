@@ -7,7 +7,7 @@
     Departure: {{ flight.departure }} {{ flight.takeoff }}<br>
     Destination: {{ flight.destination }} {{ flight.landing }}<br>
     Status: {{ flight.status }}</p> {# change text color for different statuses #}
-  <h3>Staff:</h3>
+  <h3 class="header-3">Staff:</h3>
   <ul class="article-ul">
   {% for staff in flight.staff.all %}
     <li>
