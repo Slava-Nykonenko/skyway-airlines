@@ -7,7 +7,7 @@
  */
 
 const addEventOnElem = function (elem, type, callback) {
-  if (elem.length > 1) {
+  if (NodeList.prototype.isPrototypeOf(elem) || Array.isArray(elem)) {
     for (let i = 0; i < elem.length; i++) {
       elem[i].addEventListener(type, callback);
     }
@@ -15,7 +15,6 @@ const addEventOnElem = function (elem, type, callback) {
     elem.addEventListener(type, callback);
   }
 }
-
 
 
 /**
