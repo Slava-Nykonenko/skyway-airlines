@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
 
+{% block title %}
+  <title>Skyway Airlines - {{ object|yesno:"Update,Create" }} a staff member</title>
+{% endblock %}
+
 {% block content %}
   <h2 class="header-2">{{ object|yesno:"Update,Create" }} a staff member</h2>
   <form class="form-wrapper" action="" method="post" novalidate>
