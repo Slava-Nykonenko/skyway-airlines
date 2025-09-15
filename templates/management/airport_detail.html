@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+  <title>Skyway Airlines - {{ airport.name }}</title>
+{% endblock %}
+
 {% block content %}
   <h2 class="header-2">{{ airport.name }}</h2>
   <p class="article">
