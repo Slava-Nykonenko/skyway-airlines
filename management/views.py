@@ -16,14 +16,12 @@ from management.forms import (
     AirportForm,
     PlaneForm,
     FlightForm,
-    StaffForm,
     AirportSearchForm,
     PlaneSearchForm,
     FlightSearchForm,
     StaffSearchForm,
     StaffCreateForm,
-    StaffUpdateForm,
-    StaffChangePasswordForm
+    StaffUpdateForm
 )
 from management.models import (
     Airport,
