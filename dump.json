@@ -1,0 +1,1144 @@
+[
+{
+    "model": "management.airport",
+    "pk": 1,
+    "fields": {
+        "iata": "DUB",
+        "name": "Dublin Airport",
+        "city": "Dublin",
+        "country": "Ireland",
+        "timezone": "Europe/Dublin",
+        "latitude": "53.42139",
+        "longitude": "-6.27000"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 2,
+    "fields": {
+        "iata": "LHR",
+        "name": "Heathrow Airport",
+        "city": "London",
+        "country": "United Kingdom",
+        "timezone": "Europe/London",
+        "latitude": "51.47002",
+        "longitude": "-0.45429"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 3,
+    "fields": {
+        "iata": "CDG",
+        "name": "Charles de Gaulle Airport",
+        "city": "Paris",
+        "country": "France",
+        "timezone": "Europe/Paris",
+        "latitude": "49.00969",
+        "longitude": "2.54792"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 4,
+    "fields": {
+        "iata": "FRA",
+        "name": "Frankfurt Airport",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "timezone": "Europe/Berlin",
+        "latitude": "50.03793",
+        "longitude": "8.56217"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 5,
+    "fields": {
+        "iata": "AMS",
+        "name": "Amsterdam Airport Schiphol",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "timezone": "Europe/Amsterdam",
+        "latitude": "52.31054",
+        "longitude": "4.76827"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 6,
+    "fields": {
+        "iata": "JFK",
+        "name": "John F. Kennedy International Airport",
+        "city": "New York",
+        "country": "USA",
+        "timezone": "America/New_York",
+        "latitude": "40.64131",
+        "longitude": "-73.77814"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 7,
+    "fields": {
+        "iata": "LAX",
+        "name": "Los Angeles International Airport",
+        "city": "Los Angeles",
+        "country": "USA",
+        "timezone": "America/Los_Angeles",
+        "latitude": "33.94159",
+        "longitude": "-118.40853"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 8,
+    "fields": {
+        "iata": "ORD",
+        "name": "O'Hare International Airport",
+        "city": "Chicago",
+        "country": "USA",
+        "timezone": "America/Chicago",
+        "latitude": "41.97416",
+        "longitude": "-87.90732"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 9,
+    "fields": {
+        "iata": "HND",
+        "name": "Tokyo Haneda Airport",
+        "city": "Tokyo",
+        "country": "Japan",
+        "timezone": "Asia/Tokyo",
+        "latitude": "35.54939",
+        "longitude": "139.77984"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 10,
+    "fields": {
+        "iata": "PEK",
+        "name": "Beijing Capital International Airport",
+        "city": "Beijing",
+        "country": "China",
+        "timezone": "Asia/Shanghai",
+        "latitude": "40.08011",
+        "longitude": "116.58456"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 11,
+    "fields": {
+        "iata": "DXB",
+        "name": "Dubai International Airport",
+        "city": "Dubai",
+        "country": "United Arab Emirates",
+        "timezone": "Asia/Dubai",
+        "latitude": "25.25318",
+        "longitude": "55.36567"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 12,
+    "fields": {
+        "iata": "SYD",
+        "name": "Sydney Kingsford Smith Airport",
+        "city": "Sydney",
+        "country": "Australia",
+        "timezone": "Australia/Sydney",
+        "latitude": "-33.94611",
+        "longitude": "151.17722"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 13,
+    "fields": {
+        "iata": "GRU",
+        "name": "São Paulo/Guarulhos International Airport",
+        "city": "São Paulo",
+        "country": "Brazil",
+        "timezone": "America/Sao_Paulo",
+        "latitude": "-23.43556",
+        "longitude": "-46.47306"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 14,
+    "fields": {
+        "iata": "JNB",
+        "name": "O. R. Tambo International Airport",
+        "city": "Johannesburg",
+        "country": "South Africa",
+        "timezone": "Africa/Johannesburg",
+        "latitude": "-26.13917",
+        "longitude": "28.24611"
+    }
+},
+{
+    "model": "management.airport",
+    "pk": 15,
+    "fields": {
+        "iata": "SIN",
+        "name": "Singapore Changi Airport",
+        "city": "Singapore",
+        "country": "Singapore",
+        "timezone": "Asia/Singapore",
+        "latitude": "1.36442",
+        "longitude": "103.99153"
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 1,
+    "fields": {
+        "model": "Airbus A320neo",
+        "registration": "EI-HGA",
+        "capacity": 180,
+        "last_maintenance": "2025-08-01",
+        "hours_to_maintenance": 450,
+        "total_hours": 12500
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 2,
+    "fields": {
+        "model": "Boeing 737-800",
+        "registration": "EI-DPL",
+        "capacity": 189,
+        "last_maintenance": "2025-07-15",
+        "hours_to_maintenance": 200,
+        "total_hours": 34000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 3,
+    "fields": {
+        "model": "Boeing 787-9 Dreamliner",
+        "registration": "G-CKWL",
+        "capacity": 250,
+        "last_maintenance": "2025-09-01",
+        "hours_to_maintenance": 550,
+        "total_hours": 8500
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 4,
+    "fields": {
+        "model": "Airbus A350-900",
+        "registration": "F-HTYD",
+        "capacity": 325,
+        "last_maintenance": "2025-06-20",
+        "hours_to_maintenance": 150,
+        "total_hours": 15000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 5,
+    "fields": {
+        "model": "Boeing 777-300ER",
+        "registration": "A6-EQP",
+        "capacity": 354,
+        "last_maintenance": "2025-08-22",
+        "hours_to_maintenance": 300,
+        "total_hours": 21000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 6,
+    "fields": {
+        "model": "Airbus A380-800",
+        "registration": "D-AIML",
+        "capacity": 526,
+        "last_maintenance": "2025-05-10",
+        "hours_to_maintenance": 80,
+        "total_hours": 45000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 7,
+    "fields": {
+        "model": "Embraer E190",
+        "registration": "PH-EXD",
+        "capacity": 100,
+        "last_maintenance": "2025-09-05",
+        "hours_to_maintenance": 480,
+        "total_hours": 18000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 8,
+    "fields": {
+        "model": "Boeing 737 MAX 8",
+        "registration": "N8710M",
+        "capacity": 178,
+        "last_maintenance": "2025-07-30",
+        "hours_to_maintenance": 320,
+        "total_hours": 9500
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 9,
+    "fields": {
+        "model": "Airbus A321neo",
+        "registration": "C-FLKD",
+        "capacity": 220,
+        "last_maintenance": "2025-08-11",
+        "hours_to_maintenance": 250,
+        "total_hours": 7800
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 10,
+    "fields": {
+        "model": "Boeing 747-8",
+        "registration": "B-2479",
+        "capacity": 364,
+        "last_maintenance": "2025-06-01",
+        "hours_to_maintenance": 110,
+        "total_hours": 32000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 11,
+    "fields": {
+        "model": "Airbus A220-300",
+        "registration": "HB-JCM",
+        "capacity": 145,
+        "last_maintenance": "2025-09-10",
+        "hours_to_maintenance": 590,
+        "total_hours": 5500
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 12,
+    "fields": {
+        "model": "Boeing 767-300ER",
+        "registration": "JA614A",
+        "capacity": 214,
+        "last_maintenance": "2025-04-15",
+        "hours_to_maintenance": 50,
+        "total_hours": 65000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 13,
+    "fields": {
+        "model": "Airbus A330-300",
+        "registration": "VH-QPC",
+        "capacity": 297,
+        "last_maintenance": "2025-08-18",
+        "hours_to_maintenance": 380,
+        "total_hours": 28000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 14,
+    "fields": {
+        "model": "ATR 72-600",
+        "registration": "VT-AIY",
+        "capacity": 70,
+        "last_maintenance": "2025-09-02",
+        "hours_to_maintenance": 410,
+        "total_hours": 11000
+    }
+},
+{
+    "model": "management.plane",
+    "pk": 15,
+    "fields": {
+        "model": "Bombardier CRJ900",
+        "registration": "N928XJ",
+        "capacity": 76,
+        "last_maintenance": "2025-07-25",
+        "hours_to_maintenance": 180,
+        "total_hours": 23000
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "Admin",
+        "last_name": "User",
+        "email": "admin@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-01-01T12:00:00Z",
+        "phone_number": "+353871234567",
+        "licence_number": "ADM001",
+        "position": "dispatcher",
+        "total_hours": null,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [],
+        "allowed_airports": []
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "john.smith",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "j.smith@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-02-10T10:00:00Z",
+        "phone_number": "+442079460958",
+        "licence_number": "PIL001",
+        "position": "pilot",
+        "total_hours": 8500,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1,
+            2,
+            3
+        ],
+        "allowed_airports": [
+            5,
+            1,
+            4,
+            2,
+            6,
+            3
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emily.jones",
+        "first_name": "Emily",
+        "last_name": "Jones",
+        "email": "e.jones@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-03-15T11:30:00Z",
+        "phone_number": "+33186265492",
+        "licence_number": "COP002",
+        "position": "co-pilot",
+        "total_hours": 4200,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1,
+            2,
+            8,
+            9
+        ],
+        "allowed_airports": [
+            5,
+            1,
+            4,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "chloe.murphy",
+        "first_name": "Chloe",
+        "last_name": "Murphy",
+        "email": "c.murphy@flyhigh.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-01T09:00:00Z",
+        "phone_number": "+353867654321",
+        "licence_number": null,
+        "position": "flight attendant",
+        "total_hours": 12000,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            13
+        ],
+        "allowed_airports": []
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "liam.kelly",
+        "first_name": "Liam",
+        "last_name": "Kelly",
+        "email": "l.kelly@flyhigh.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-01T09:05:00Z",
+        "phone_number": "+353851122334",
+        "licence_number": null,
+        "position": "cabin crew",
+        "total_hours": 9800,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1,
+            2,
+            8,
+            9,
+            13
+        ],
+        "allowed_airports": []
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "david.chen",
+        "first_name": "David",
+        "last_name": "Chen",
+        "email": "d.chen@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-01-20T14:00:00Z",
+        "phone_number": "+12125550184",
+        "licence_number": "ENG001",
+        "position": "engineer",
+        "total_hours": null,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [],
+        "allowed_airports": [
+            8,
+            7,
+            6
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "maria.garcia",
+        "first_name": "Maria",
+        "last_name": "Garcia",
+        "email": "m.garcia@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-02-18T08:30:00Z",
+        "phone_number": "+34911235487",
+        "licence_number": "PIL003",
+        "position": "pilot",
+        "total_hours": 11500,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            4,
+            5,
+            6,
+            10
+        ],
+        "allowed_airports": [
+            11,
+            4,
+            3,
+            15,
+            13
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "yuki.tanaka",
+        "first_name": "Yuki",
+        "last_name": "Tanaka",
+        "email": "y.tanaka@flyhigh.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-12T16:00:00Z",
+        "phone_number": "+81345678901",
+        "licence_number": null,
+        "position": "flight attendant",
+        "total_hours": 8200,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            3,
+            4,
+            9,
+            10,
+            12
+        ],
+        "allowed_airports": []
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ahmed.khan",
+        "first_name": "Ahmed",
+        "last_name": "Khan",
+        "email": "a.khan@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-06-01T12:00:00Z",
+        "phone_number": "+971501234567",
+        "licence_number": "MTC002",
+        "position": "maintenance tech",
+        "total_hours": null,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [],
+        "allowed_airports": [
+            11
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "sophie.dubois",
+        "first_name": "Sophie",
+        "last_name": "Dubois",
+        "email": "s.dubois@flyhigh.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-03-25T18:00:00Z",
+        "phone_number": "+33612345678",
+        "licence_number": null,
+        "position": "cabin crew",
+        "total_hours": 11000,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1,
+            4,
+            6,
+            9,
+            13
+        ],
+        "allowed_airports": []
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "peter.schmidt",
+        "first_name": "Peter",
+        "last_name": "Schmidt",
+        "email": "p.schmidt@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-07-02T09:45:00Z",
+        "phone_number": "+491761245678",
+        "licence_number": "COP004",
+        "position": "co-pilot",
+        "total_hours": 5800,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            4,
+            5,
+            6,
+            10
+        ],
+        "allowed_airports": [
+            5,
+            1,
+            4,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "oliver.baker",
+        "first_name": "Oliver",
+        "last_name": "Baker",
+        "email": "o.baker@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-05-20T13:00:00Z",
+        "phone_number": "+61412345678",
+        "licence_number": null,
+        "position": "ground crew",
+        "total_hours": null,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [],
+        "allowed_airports": [
+            12
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "lucas.silva",
+        "first_name": "Lucas",
+        "last_name": "Silva",
+        "email": "l.silva@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-06-11T11:00:00Z",
+        "phone_number": "+551191234578",
+        "licence_number": "PIL005",
+        "position": "pilot",
+        "total_hours": 13000,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            7,
+            14,
+            15
+        ],
+        "allowed_airports": [
+            8,
+            7,
+            6,
+            13
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "isabella.rossi",
+        "first_name": "Isabella",
+        "last_name": "Rossi",
+        "email": "i.rossi@flyhigh.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-07-22T10:30:00Z",
+        "phone_number": "+390612345678",
+        "licence_number": null,
+        "position": "flight attendant",
+        "total_hours": 6500,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1,
+            2,
+            7,
+            11,
+            14
+        ],
+        "allowed_airports": []
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VaxnGBvCjO5s3vPAyKl3qN$4O64bclvI+GqDvoBARfH6YJQjT6a11vjKqz3+pEzPSM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "james.wilson",
+        "first_name": "James",
+        "last_name": "Wilson",
+        "email": "j.wilson@flyhigh.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-08-01T15:00:00Z",
+        "phone_number": "+13125550199",
+        "licence_number": "COP006",
+        "position": "co-pilot",
+        "total_hours": 3500,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            7,
+            8,
+            12,
+            15
+        ],
+        "allowed_airports": [
+            8,
+            7,
+            6
+        ]
+    }
+},
+{
+    "model": "management.staff",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$g043LL9eUh7sjontSynlw9$7TkMrd2HhwbhW5TiUdbUwKK2eWTai6y8fWpDf2EvYXg=",
+        "last_login": "2025-09-16T19:46:33.750Z",
+        "is_superuser": true,
+        "username": "user.admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "v.nykonenko@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-09-16T19:45:48.075Z",
+        "phone_number": null,
+        "licence_number": null,
+        "position": "",
+        "total_hours": null,
+        "groups": [],
+        "user_permissions": [],
+        "allowed_planes": [
+            1
+        ],
+        "allowed_airports": [
+            5
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 1,
+    "fields": {
+        "flight_number": "EI105",
+        "plane": 1,
+        "departure": 1,
+        "destination": 6,
+        "takeoff": "2025-10-26T10:30:00Z",
+        "landing": "2025-10-26T13:00:00Z",
+        "status": "scheduled",
+        "staff": [
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 2,
+    "fields": {
+        "flight_number": "BA287",
+        "plane": 3,
+        "departure": 2,
+        "destination": 7,
+        "takeoff": "2025-10-27T15:00:00Z",
+        "landing": "2025-10-27T18:15:00Z",
+        "status": "scheduled",
+        "staff": [
+            7,
+            8,
+            10,
+            11
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 3,
+    "fields": {
+        "flight_number": "AF1680",
+        "plane": 4,
+        "departure": 3,
+        "destination": 1,
+        "takeoff": "2025-10-28T08:45:00Z",
+        "landing": "2025-10-28T10:00:00Z",
+        "status": "scheduled",
+        "staff": [
+            2,
+            3,
+            10
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 4,
+    "fields": {
+        "flight_number": "LH920",
+        "plane": 6,
+        "departure": 4,
+        "destination": 2,
+        "takeoff": "2025-10-28T12:00:00Z",
+        "landing": "2025-10-28T13:30:00Z",
+        "status": "delayed",
+        "staff": [
+            4,
+            7,
+            11
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 5,
+    "fields": {
+        "flight_number": "KL643",
+        "plane": 5,
+        "departure": 5,
+        "destination": 6,
+        "takeoff": "2025-10-29T17:20:00Z",
+        "landing": "2025-10-29T19:50:00Z",
+        "status": "scheduled",
+        "staff": [
+            7,
+            8,
+            10,
+            11
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 6,
+    "fields": {
+        "flight_number": "UA929",
+        "plane": 8,
+        "departure": 8,
+        "destination": 2,
+        "takeoff": "2025-10-30T18:00:00Z",
+        "landing": "2025-10-31T07:45:00Z",
+        "status": "scheduled",
+        "staff": [
+            13,
+            14,
+            15
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 7,
+    "fields": {
+        "flight_number": "JL045",
+        "plane": 12,
+        "departure": 9,
+        "destination": 3,
+        "takeoff": "2025-10-31T22:55:00Z",
+        "landing": "2025-11-01T04:45:00Z",
+        "status": "scheduled",
+        "staff": [
+            7,
+            8,
+            10,
+            11
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 8,
+    "fields": {
+        "flight_number": "CA981",
+        "plane": 10,
+        "departure": 10,
+        "destination": 6,
+        "takeoff": "2025-11-01T13:00:00Z",
+        "landing": "2025-11-01T13:20:00Z",
+        "status": "cancelled",
+        "staff": [
+            7,
+            8,
+            11
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 9,
+    "fields": {
+        "flight_number": "EK201",
+        "plane": 5,
+        "departure": 11,
+        "destination": 6,
+        "takeoff": "2025-11-02T08:30:00Z",
+        "landing": "2025-11-02T14:25:00Z",
+        "status": "scheduled",
+        "staff": [
+            4,
+            7,
+            8,
+            11
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 10,
+    "fields": {
+        "flight_number": "QF1",
+        "plane": 13,
+        "departure": 12,
+        "destination": 2,
+        "takeoff": "2025-11-03T15:55:00Z",
+        "landing": "2025-11-04T06:20:00Z",
+        "status": "scheduled",
+        "staff": [
+            2,
+            3,
+            5,
+            10
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 11,
+    "fields": {
+        "flight_number": "LA8180",
+        "plane": 7,
+        "departure": 13,
+        "destination": 7,
+        "takeoff": "2025-11-04T23:05:00Z",
+        "landing": "2025-11-05T07:15:00Z",
+        "status": "scheduled",
+        "staff": [
+            13,
+            14,
+            15
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 12,
+    "fields": {
+        "flight_number": "SA204",
+        "plane": 14,
+        "departure": 14,
+        "destination": 6,
+        "takeoff": "2025-11-05T10:45:00Z",
+        "landing": "2025-11-06T06:25:00Z",
+        "status": "delayed",
+        "staff": [
+            13,
+            14,
+            15
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 13,
+    "fields": {
+        "flight_number": "SQ32",
+        "plane": 9,
+        "departure": 15,
+        "destination": 8,
+        "takeoff": "2025-11-06T19:00:00Z",
+        "landing": "2025-11-07T06:50:00Z",
+        "status": "scheduled",
+        "staff": [
+            2,
+            3,
+            5,
+            14
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 14,
+    "fields": {
+        "flight_number": "EI445",
+        "plane": 2,
+        "departure": 1,
+        "destination": 4,
+        "takeoff": "2025-11-07T06:40:00Z",
+        "landing": "2025-11-07T09:40:00Z",
+        "status": "scheduled",
+        "staff": [
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "management.flight",
+    "pk": 15,
+    "fields": {
+        "flight_number": "DL177",
+        "plane": 15,
+        "departure": 6,
+        "destination": 5,
+        "takeoff": "2025-11-08T20:30:00Z",
+        "landing": "2025-11-09T09:50:00Z",
+        "status": "cancelled",
+        "staff": [
+            13,
+            14,
+            15
+        ]
+    }
+}
+]
