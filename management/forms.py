@@ -142,11 +142,9 @@ class FlightForm(forms.ModelForm):
         ]
         widgets = {
             "takeoff": forms.DateTimeInput(
-                format="%d/%m/%Y %H:%M",
                 attrs={"type": "datetime-local"}
             ),
             "landing": forms.DateTimeInput(
-                format="%d/%m/%Y %H:%M",
                 attrs={"type": "datetime-local"}
             ),
         }
