@@ -19,3 +19,7 @@ DATABASES = {
         "PORT": int(os.environ["POSTGRES_DB_PORT"]),
     }
 }
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
