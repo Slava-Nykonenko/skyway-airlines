@@ -1,6 +1,6 @@
 ![Logo of the project](static/images/logo.png)
 
-# "SkyWay Airlines"
+# SkyWay Airlines
 
     Effortless Airline Management, Elevated.
     Manage flights, staff, and aircraft with precision and ease
@@ -126,5 +126,15 @@ If you'd like to contribute:
 
 ## Links
 
+- Project homepage: https://skyway-airlines-9o8x.onrender.com/
+  - To use the functionality sign in with this data:
+    ```
+    login: user
+    password: test@123
+    ```
 - Repository: https://github.com/Slava-Nykonenko/skyway-airlines
-- Issue tracker: https://github.com/Slava-Nykonenko/skyway-airlines/issues
+- Issue tracker: https://github.com/Slava-Nykonenko/skyway-airlines/issues. 
+  - In case of sensitive bugs like security vulnerabilities, please contact 
+  [slava.nykon@gmail.com](mailto:slava.nykon@gmail.com) directly instead of using 
+  issue tracker. We value your effort to improve the security and privacy of this 
+  project!

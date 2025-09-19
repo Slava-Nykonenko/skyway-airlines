@@ -39,7 +39,7 @@ def index(request):
     num_planes = Plane.objects.count()
     num_staff = Staff.objects.count()
     num_flights = Flight.objects.count()
-    num_visits = request.session.get("num_visits", 0)
+    num_visits = request.session.get("num_visits", 1)
     request.session["num_visits"] = num_visits + 1
 
     context = {

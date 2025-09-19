@@ -360,7 +360,7 @@ body.active { overflow: hidden; }
   box-shadow: 0 0 0 3px hsla(204, 90%, 54%, 0.2);
 }
 
-.form-wrapper .form-check-input {
+.form-wrapper .form-check {
   width: 18px;
   height: 18px;
   margin-right: 8px;
