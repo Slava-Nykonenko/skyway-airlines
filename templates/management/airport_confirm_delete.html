@@ -10,5 +10,8 @@
     {% csrf_token %}
 
     <input type="submit" value="Yes" class="btn btn-danger">
+    <a href="{% url 'management:airport-detail' pk=airport.id %}" class="btn btn-secondary">
+      Cancel
+    </a>
   </form>
 {% endblock %}

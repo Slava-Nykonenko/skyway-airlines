@@ -6,9 +6,13 @@
 
 {% block content %}
   <h2 class="header-2">Delete a flight?</h2>
+
   <form class="form-wrapper" action="" method="post">
     {% csrf_token %}
 
     <input type="submit" value="Yes" class="btn btn-danger">
+    <a href="{% url 'management:flight-detail' pk=flight.id %}" class="btn btn-secondary">
+      Cancel
+    </a>
   </form>
 {% endblock %}
