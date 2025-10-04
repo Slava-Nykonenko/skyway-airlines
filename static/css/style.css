@@ -30,7 +30,7 @@
   --fw-700: 700;
 
   /* SPACING */
-  --section-padding: 120px;
+  --section-padding: 20px;
 
   /* BORDER RADIUS */
   --radius-pill: 50px;
@@ -63,9 +63,12 @@ li { list-style: none; }
 a,
 img,
 span,
-input,
 button,
 ion-icon { display: block; }
+
+input:not([type="checkbox"]):not([type="radio"]) {
+    display: block;
+}
 
 a {
   color: inherit;
@@ -81,7 +84,10 @@ button {
   font: inherit;
 }
 
-input { width: 100%; }
+input {
+  width: 100%;
+  max-width: 100%;
+}
 
 button { cursor: pointer; }
 
@@ -118,12 +124,20 @@ body.active { overflow: hidden; }
 
 .container { padding-inline: 15px; }
 
-.section { padding-block: var(--section-padding); }
+.section {
+  padding-block: var(--section-padding);
+}
+
+.standard-content {
+  padding-top: 120px;
+  background-color: var(--alice-blue);
+}
 
 .header-1,
 .header-2 {
   color: var(--oxford-blue);
   font-weight: var(--fw-700);
+  text-align: center;
 }
 
 .header-1 {
@@ -245,6 +259,47 @@ body.active { overflow: hidden; }
 .navbar-list { border-block-start: 1px solid var(--light-gray); }
 .navbar-item { border-block-end: 1px solid var(--light-gray); }
 
+
+/*-----------------------------------*\
+  #HEADER (Additional Mobile Styles)
+\*-----------------------------------*/
+
+.nav-open-btn {
+    font-size: 3rem;
+    color: var(--oxford-blue);
+    padding: 10px;
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+.nav-close-btn {
+    font-size: 3rem;
+    color: var(--oxford-blue);
+    padding: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition-1);
+    z-index: 1;
+}
+
+.body.active .overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
@@ -254,7 +309,7 @@ body.active { overflow: hidden; }
   background-color: var(--alice-blue);
   color: var(--oxford-blue);
   text-align: center;
-  padding-block: 200px 150px;
+  padding-block: 200px 250px;
   z-index: 1;
 }
 
@@ -325,6 +380,10 @@ body.active { overflow: hidden; }
   margin-bottom: 8px;
 }
 
+.fs-6 {
+  display: inline-flex;
+}
+
 .form-wrapper .form-text {
   font-size: 1.4rem;
   color: var(--jet);
@@ -361,9 +420,6 @@ body.active { overflow: hidden; }
 }
 
 .form-wrapper .form-check {
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
   accent-color: var(--sky-blue-crayola);
   cursor: pointer;
 }
@@ -390,6 +446,26 @@ body.active { overflow: hidden; }
   background-color: var(--picton-blue);
 }
 
+.form-wrapper .form-check-input {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-right: 8px;
+}
+
+fieldset {
+  border-style: none;
+}
+
+.form-wrapper .form-check-label {
+  display: inline;
+  font-weight: normal;
+}
+
+.form-label {
+  font-weight: bold;
+  padding-top: 10px;
+}
 /*-----------------------------------*\
    SEARCH FORM
 \*-----------------------------------*/
@@ -545,7 +621,7 @@ body.active { overflow: hidden; }
   color: var(--light-gray);
 }
 
-.footer-top { --section-padding: 90px; }
+.footer-top { var(--section-padding) }
 
 .footer-brand .logo img {
   filter: brightness(75%) invert(1);
@@ -654,7 +730,9 @@ body.active { overflow: hidden; }
     width: 100%;
     margin-inline: auto;
   }
-
+  .nav-open-btn {
+    display: block;
+  }
   .header .container { max-width: unset; }
 }
 
@@ -666,7 +744,9 @@ body.active { overflow: hidden; }
 
   .container { max-width: 720px; }
   .grid-list { grid-template-columns: 1fr 1fr; }
-
+  .nav-open-btn {
+    display: block;
+  }
   .hero { padding-block-start: 224px; }
 
   .footer-bottom {
@@ -680,6 +760,9 @@ body.active { overflow: hidden; }
 
 @media (min-width: 992px) {
   .container { max-width: 960px; }
+  .nav-open-btn {
+    display: block;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -702,10 +785,16 @@ body.active { overflow: hidden; }
   }
 
   .navbar {
+    position: static;
+    width: auto;
+    height: auto;
+    padding-right: 35px;
+    border-right: none;
     margin-left: auto;
   }
 
   .navbar-list {
+    border-block-start: none;
     display: flex;
     align-items: center;
     gap: 40px;
@@ -716,8 +805,16 @@ body.active { overflow: hidden; }
     font-weight: var(--fw-600);
   }
 
+  .navbar-item {
+    border-block-end: none;
+  }
+
   .footer-top {
     grid-template-columns: 1fr 0.5fr 0.5fr 0.6fr;
     gap: 50px;
   }
+}
+
+.header .container {
+  padding-inline: 0; /* Adjust as needed */
 }
